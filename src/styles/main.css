@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+* {
+    padding: unset;
+    margin: unset;
+}
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: rgba(106, 183, 255, 0.1);
+    color: rgb(0, 0, 0);;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+html {
+    scroll-behavior: smooth;
+}
+.hero-header{
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("../public/images/heros/hero-image_2.jpg");
+    min-height: 350px;
+    width: 100%;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+    background-position: center;
+}
+.hero-header h1{
+    color: white;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    font-size: 2.5em;
+}
+.content{
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+.content .restoran {
+    display: flex;
+    flex-direction: column;
+}
+.content h2 {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.hero-header h2 {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+#resto-list {
+    display: flex;
+    flex-wrap: wrap;  
+}
+#resto-list .card {
+    transition: transform 0.5s;
+    margin-bottom: 50px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    align-items: center;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+nav .nav-head p{
+    font-size: 1.2em;
+    font-weight: 1000;
+}
+nav p {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 1000;
+    color: black;
+}
+nav ul {
+    transform: translate(350px, 0);
+    transition: transform 0.6s ease-in-out;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    padding: 0 50px;
+    z-index: 2;
+}
+nav ul li {
+    margin: 50px 10px;
+    display: block;
+}
+nav ul li a {
+    font-style: unset;
+    padding: 20px;
+}
+nav ul li a:hover {
+    font-weight: bold;
+}
+
+nav .burger {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: unset;
+}
+nav .burger i {
+    font-size: 1.5em;
+    color: black;
+}
+.open {
+    transform: unset;
+}
+span {
+    font-weight: 600;
+}
+main {
+    padding-top: 50px;
+}
+.card  {
+    max-width: 85%;
+    background-color: rgb(255, 255, 255) ;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px rgba(0, 98, 245, 0.2);;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 0 auto 30px auto;
+}
+.card-header{
+    color:  rgb(0, 0, 0);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+.card-main img{
+    width: 100%;
+}
+.card-main {
+    margin: 0 auto;
+    max-height: 200px; 
+    overflow: hidden;
+}
+.card-desc {
+    margin: 20px auto;
+    padding: 0 20px;
+    font-size: 1.1em;
+}
+.card-desc .card-btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.btn {
+    padding: 15px;
+    font-size: 15px;
+    width: 180px;
+    border-radius: 10px;
+    border: unset;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+.btn a {
+    padding: 5px;
+    color: white;
+}
+.btn:active {
+    opacity: 0.7;
+    transition: unset;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+}
+.btn-desc {
+    background-color: #006FFF;
+    font-size: 14pt;
+    font-weight: bold;
+    bottom: 0;
+}
+
+.user-rate img {
+    border-radius: 150px;
+    width: 150px;
+    border: 3px solid rgb(0, 162, 255);
+    margin: 20px auto;
+    transition: 0.4s;
+}
+.user-rate img:hover {
+    border: 3px solid rgb(0, 62, 119);
+
+}
+.user-rate {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: unset;
+    margin-bottom: 60px;
+    padding: 50px 0;
+}
+.user-rate .card-main{
+    display: flex;
+}
+
+.user-rate .card {
+    max-height: 100%;
+    width: 90%;
+    flex-shrink: 0;
+    margin: 0 30px;
+    text-align: center;
+    transition: 0.5s;
+}
+.user-rate .card:hover {
+    transform: scale(1.06);
+    position: relative;
+}
+.user-rate .card-header{
+    font-weight: 600;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+.user-rate .card-desc .job {
+    font-size: 20px;
+}
+.user-rate .card-desc .desc {
+    font-size: 11px;
+}
+#testi {
+    padding-top: 50px;
+}
+footer {
+    width: 100%;
+    padding: 30px 0;
+
+    background-color: white;
+    text-align: center;
+    display: flex;
+    font-weight: bold;
+}
+
+footer p {
+    margin: auto;
+}
+.skip-link {
+    position: absolute;
+    left: -300px;
+    background-color: #006FFF;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+ }
+  
+ .skip-link:focus {
+    left: 0;
+ }
+ #resto-list .card:hover {
+    transform: scale(1.05);
+}
+
+.preloader{
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+.preloader img {
+    margin: 0 auto;
+}
+.hide {
+    display: none;
+}
+
+.detail {
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail .head {
+    display: flex;
+    flex-wrap: wrap;
+}
+.detail .head img {
+    width: 100%;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 23, 44, 0.2);;
+}
+.detail .head table {
+    margin:  auto;
+    margin-top: 50px;
+    width: 85%;
+}
+
+.detail .head tr {
+    display: block;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid black ;
+}
+.detail .head tr:first-child {
+    margin-top: 0;
+}
+.head td i {
+    margin: auto;
+    margin-right: 15px;
+    left: 0;
+    font-size: 1.2em;
+}
+.head tr a {
+    padding-right: 20px;
+    font-size: 1.1em;
+}
+.desc {
+    margin-top: 50px;
+    display: flex;
+}
+.desc p {
+    font-size: 1.15em;
+    line-height: 25px;
+}
+.detail h1 {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.8em;
+    letter-spacing: 0.1em;
+}
+#categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+#categories a {
+    display: block;
+    background-color: #007AB2;
+    padding: 2px 10px;
+    border-radius: 20px;
+    color:  white;
+    margin-right: 10px;
+    margin-top: 5px;
+    text-align: center;
+}
+.error {
+    margin: 100px 15px;
+}
+.error a {
+    border-bottom: 2px solid black;
+}
+.error a:hover {
+    cursor: pointer;
+    color: rgb(48, 48, 48);
+}
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.list h3 {
+    margin: 30px 0;
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+}
+.list p {
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+.list {
+    width: 80%;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin-bottom: 70px;
+}
+.form input, .form textarea {
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 64, 124, 0.1);
+}
+.form input {
+    height: 35px;
+    border-radius: 5px;
+}
+.form textarea {
+    min-height: 200px;
+    border-radius: 10px;
+}
+.form .card-btn button{
+    color: white;
+    background-color: rgb(0, 153, 255);
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+.form .card-btn{
+    margin: auto;
+}
+#submit {
+    background-color: #007AB2;
+}
+/*
+   Like
+*/
+
+.like {
+    font-size: 18px;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(0, 162, 255);
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 64, 124, 0.25);
+}

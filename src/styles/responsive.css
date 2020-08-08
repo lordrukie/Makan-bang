@@ -1,0 +1,104 @@
+@media screen and (max-width: 300px){
+    .btn {
+        padding: 15px;
+        font-size: 13px;
+        width: 80px;
+        border-radius: 10px;
+        border: unset;
+    }
+}
+
+
+@media screen and (min-width: 500px){
+    #resto-list .card {
+        width: 350px;
+    }
+    #resto-list .card:hover {
+        transform: scale(1.09);
+    }
+
+    #resto-list .card-main {
+        height: 220px;
+    }
+    .user-rate .card{
+        width: 280px;
+    }
+    footer {
+        font-size: 1.2em;
+    }
+}
+@media screen and (min-width: 724px){
+    nav .burger {
+        display: none;
+    }
+    nav ul {
+        transform: translate(0,0);
+        height: auto;
+        padding: unset;
+        position: relative;
+        background-color: unset;
+        margin: 15px 0;
+        transition: unset;
+    }
+    nav ul li {
+        display: inline-block;
+        margin: unset;
+    }
+    .hero-header {
+        min-height: 450px;
+    }
+    .detail .head{
+        flex-wrap: nowrap;
+    }
+    .detail .head img {
+        width: 50%;
+    }
+    .detail .head table {
+        width: auto;
+        margin: auto;
+        margin-left: 30px;
+    }
+    .list {
+        width: 40%;
+    }
+    .form {
+        padding: 0 30px;
+    }
+    .desc {
+        box-sizing: border-box;
+        padding: 0 50px;
+    }
+}
+@media screen and (min-width: 1020px){
+    #resto-list .card {
+        width: 380px;
+    }
+    .detail .head img {
+        width: 50%;
+    }
+    .detail .head table {
+        margin-left: 50px;
+        width: 80%;
+    }
+    .form {
+        padding: 0 8%;
+    }
+    .desc {
+        padding: 0 10%;
+    }
+    .desc p {
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 300px){
+    .btn {
+        padding: 15px;
+        font-size: 13px;
+        width: 80px;
+        border-radius: 10px;
+        border: unset;
+    }
+    #resto-list .card {
+        width: 380px;
+    }
+}
