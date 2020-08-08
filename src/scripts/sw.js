@@ -55,12 +55,14 @@ registerRoute(
 );
 
 registerRoute(
-  ({ url }) => url.origin === 'https://kit.fontawesome.com',
-  new StaleWhileRevalidate(),
+  new RegExp('https://kit.fontawesome.com/'),
+  new CacheFirst({
+    cacheName: 'javsacript-font-awesome',
+  }),
 );
 
 registerRoute(
-  new RegExp('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css'),
+  new RegExp('https://kit-free.fontawesome.com/'),
   new CacheFirst({
     cacheName: 'icon-font-awesome',
   }),

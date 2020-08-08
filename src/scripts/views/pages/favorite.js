@@ -22,7 +22,6 @@ const Favorite = {
     ElementViews.hideElement(testimonial);
 
     const restaurant = await MakanBangDB.getAllResto();
-    console.log(restaurant);
     const restoContainer = document.querySelector('#resto-list');
 
     Preloader.removePreloader();

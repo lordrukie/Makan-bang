@@ -64,32 +64,30 @@ const Detail = {
 
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await MakanBangDataSource.detailResto(url.id);
-    const restoDetail = restaurant.restaurant;
-    const restoMenu = restoDetail.menus;
 
     Preloader.removePreloader();
 
-    if (!restoDetail) {
+    if (!restaurant.restaurant) {
       document.querySelector('.content').innerHTML = dataErrorTemplate(restaurant);
       return;
     }
 
-    restoContainer.innerHTML += restoDetailTemplate(restoDetail);
+    restoContainer.innerHTML += restoDetailTemplate(restaurant.restaurant);
     const categories = document.querySelector('#categories');
 
-    restoDetail.categories.forEach((category) => {
+    restaurant.restaurant.categories.forEach((category) => {
       categories.innerHTML += detailRestoCategoryTemplate(category);
     });
 
-    restoMenu.foods.forEach((foodList) => {
+    restaurant.restaurant.menus.foods.forEach((foodList) => {
       food.innerHTML += createMenuListTemplate(foodList);
     });
 
-    restoMenu.drinks.forEach((drinkList) => {
+    restaurant.restaurant.menus.drinks.forEach((drinkList) => {
       drink.innerHTML += createMenuListTemplate(drinkList);
     });
 
-    restoDetail.consumerReviews.forEach((usrRate) => {
+    restaurant.restaurant.consumerReviews.forEach((usrRate) => {
       userRateContainer.innerHTML += userReviewTemplate(usrRate);
     });
 
@@ -97,7 +95,7 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      movie: restoDetail,
+      movie: restaurant.restaurant,
     });
   },
 

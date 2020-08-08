@@ -26,6 +26,7 @@ class MakanBangDataSource {
   static async detailResto(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
+      setTimeout(() => 'Err: Disconected', 10000);
       if (response.status !== 200) {
         return response.status;
       }

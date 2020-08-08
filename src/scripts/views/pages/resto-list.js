@@ -29,18 +29,17 @@ const RestoList = {
     const rate = await MakanBangDataSource.userRate();
     const restoContainer = document.querySelector('#resto-list');
     const userRateContainer = document.querySelector('.user-rate');
-    const restaurantList = restaurant.restaurants;
 
     Preloader.removePreloader();
 
-    if (!restaurantList) {
+    if (!restaurant.restaurants) {
       document.querySelector('.content').innerHTML = dataErrorTemplate(restaurant);
       return;
     }
     rate.users.forEach((usrRate) => {
       userRateContainer.innerHTML += userRateTemplate(usrRate);
     });
-    restaurantList.forEach((resto) => {
+    restaurant.restaurants.forEach((resto) => {
       restoContainer.innerHTML += restoListTemplate(resto);
     });
   },
