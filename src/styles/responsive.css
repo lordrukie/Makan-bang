@@ -74,11 +74,11 @@
         width: 380px;
     }
     .detail .head img {
-        width: 50%;
+        width: 530px;
     }
     .detail .head table {
         margin-left: 50px;
-        width: 80%;
+        max-width: 80%;
     }
     .form {
         padding: 0 8%;
