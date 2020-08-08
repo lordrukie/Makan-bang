@@ -2,7 +2,7 @@ import 'regenerator-runtime/runtime';
 import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
 import { cleanupOutdatedCaches } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing/registerRoute';
-import { StaleWhileRevalidate, CacheFirst, NetworkFirst } from 'workbox-strategies';
+import { StaleWhileRevalidate } from 'workbox-strategies';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { skipWaiting, clientsClaim, setCacheNameDetails } from 'workbox-core';
 import CONFIG from './globals/config';
@@ -25,7 +25,7 @@ precacheAndRoute(self.__WB_MANIFEST, {
 
 registerRoute(
   /^https:\/\/dicoding-restaurant-api\.el\.r\.appspot\.com\/(?:(list|detail))/,
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'dicoding-restaurant-api',
     plugins: [
       new ExpirationPlugin({
@@ -38,7 +38,7 @@ registerRoute(
 
 registerRoute(
   ({ request }) => request.destination === 'image',
-  new NetworkFirst({
+  new StaleWhileRevalidate({
     cacheName: 'images',
     plugins: [
       new ExpirationPlugin({
@@ -55,15 +55,15 @@ registerRoute(
 );
 
 registerRoute(
-  new RegExp('https://kit.fontawesome.com/'),
-  new CacheFirst({
+  /^https:\/\/kit\.fontawesome\.com\//,
+  new StaleWhileRevalidate({
     cacheName: 'javsacript-font-awesome',
   }),
 );
 
 registerRoute(
-  new RegExp('https://kit-free.fontawesome.com/'),
-  new CacheFirst({
+  /^https:\/\/kit-free\.fontawesome\.com\//,
+  new StaleWhileRevalidate({
     cacheName: 'icon-font-awesome',
   }),
 );

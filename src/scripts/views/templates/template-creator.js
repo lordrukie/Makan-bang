@@ -48,7 +48,7 @@ const userReviewTemplate = (user) => `
                     <p>${user.name}</p>
                 </div>
                 <p class="job">${user.date}</p> <br>
-                <p class="capt"><em>"${user.review}"</em></p>
+                <p class="capt"><em>"${user.review.length > 90 ? `${user.review.substring(0, 90)}...` : user.review}"</em></p>
             </div>
         </div>
 `;

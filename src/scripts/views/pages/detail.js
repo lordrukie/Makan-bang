@@ -34,9 +34,9 @@ const Detail = {
     <article class="review">
         <div class="form">
             <label for="name">Nama:</label><br>
-            <input type="text" id="name" name="fname"><br>
+            <input maxlength="25" type="text" id="name" name="fname"><br>
             <label for="desc">Pendapat:</label><br>
-            <textarea type="text" id="desc" name="lname"></textarea>
+            <textarea maxlength="90" type="text" id="desc" name="lname"></textarea>
             <div class="card-btn">
                 <button id="submit" class="btn btn-desc">Submit</button>
             </div>
