@@ -95,11 +95,11 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      movie: restaurant.restaurant,
+      resto: restaurant.restaurant,
     });
   },
 
-  addUserReview(id) {
+  addUserReview(idResto) {
     document.querySelector('#submit').addEventListener('click', () => {
       const name = document.querySelector('#name');
       const desc = document.querySelector('#desc');
@@ -112,7 +112,11 @@ const Detail = {
         return;
       }
 
-      MakanBangDataSource.addReview(id, nameValueHandling, desc.value);
+      MakanBangDataSource.addReview({
+        id: idResto,
+        name: nameValueHandling,
+        review: desc.value,
+      });
 
       // Menampilkan user review kedalam html secara real time ( tidak menunggu server )
       userRateContainer.innerHTML += userReviewTemplate({

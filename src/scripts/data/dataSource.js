@@ -26,7 +26,6 @@ class MakanBangDataSource {
   static async detailResto(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
-      setTimeout(() => 'Err: Disconected', 10000);
       if (response.status !== 200) {
         return response.status;
       }
@@ -36,9 +35,9 @@ class MakanBangDataSource {
     }
   }
 
-  static async addReview(id, name, review) {
+  static async addReview({ id, name, review }) {
     const response = await fetch(API_ENDPOINT.REVIEW,
-      OPTION.postOption(id, name, review));
+      OPTION.postOption({ id, name, review }));
     return response.json();
   }
 }

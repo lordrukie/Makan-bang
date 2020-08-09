@@ -1,5 +1,5 @@
 const OPTION = {
-  postOption(id, name, review) {
+  postOption({ id, name, review }) {
     return {
       method: 'POST',
       headers: {

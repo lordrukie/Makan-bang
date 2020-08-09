@@ -48,10 +48,12 @@
         min-height: 450px;
     }
     .detail .head{
+        display: flex;
         flex-wrap: nowrap;
     }
     .detail .head img {
         width: 50%;
+        margin: auto;
     }
     .detail .head table {
         width: auto;
