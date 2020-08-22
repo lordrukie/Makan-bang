@@ -10,27 +10,33 @@ import {
 import Preloader from '../../loader/loading';
 import ElementViews from '../../utils/element-view';
 import Scroll from '../../utils/scroll';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
+import MakanBangDB from '../../data/favoriteRestoIdb';
 
 const Detail = {
   async render() {
+    const docHero = document.querySelector('hero-view');
+    const testimonial = document.querySelector('.testi');
+
+    ElementViews.hideElement(docHero);
+    ElementViews.hideElement(testimonial);
     return `
     <section class="restoran">
     <article id="resto-list"></article>
-    <h2>Daftar Makanan dan Minuman yang Tersedia</h2>
+
     <article class="menu">
-    <div class="list food"><h3>Makanan</h3></div>
-    <div class="list drink"><h3>Minuman</h3></div>
+    <div class="list food"></div>
+    <div class="list drink"></div>
     </article>
 </section>
 
 <section id="review" class="rate">
-<h2>Apa Kata Mereka Tentang <span class="bold">Restoran Ini.</span></h2>
+
     <article class="user-rate"></article>
 </section>
 
 <section class="form">
-    <h2>Berikan Pendapatmu Tentang Restoran Ini.</h2>
+
     <article class="review">
         <div class="form">
             <label for="name">Nama:</label><br>
@@ -56,11 +62,6 @@ const Detail = {
     const userRateContainer = document.querySelector('.user-rate');
     const food = document.querySelector('.food');
     const drink = document.querySelector('.drink');
-    const docHero = document.querySelector('hero-view');
-    const testimonial = document.querySelector('.testi');
-
-    ElementViews.hideElement(docHero);
-    ElementViews.hideElement(testimonial);
 
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await MakanBangDataSource.detailResto(url.id);
@@ -78,11 +79,11 @@ const Detail = {
     restaurant.restaurant.categories.forEach((category) => {
       categories.innerHTML += detailRestoCategoryTemplate(category);
     });
-
+    food.innerHTML = '<h3>Makanan</h3>';
     restaurant.restaurant.menus.foods.forEach((foodList) => {
       food.innerHTML += createMenuListTemplate(foodList);
     });
-
+    drink.innerHTML = '<h3>Minuman</h3>';
     restaurant.restaurant.menus.drinks.forEach((drinkList) => {
       drink.innerHTML += createMenuListTemplate(drinkList);
     });
@@ -93,9 +94,10 @@ const Detail = {
 
     this.addUserReview(url.id);
 
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: restaurant.restaurant,
+      favoriteResto: MakanBangDB,
     });
   },
 

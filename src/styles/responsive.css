@@ -46,17 +46,30 @@
     }
     .hero-header {
         min-height: 450px;
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("/images/heros/hero-image_2.jpg");
+        background-size: cover;
+        background-position: center;
+    }
+    .detail .head-img {
+        min-width: 380px;
+        min-height: 250px;
+        margin: 0 auto;
+        display: flex;
+        background-color: rgb(199, 199, 199);
+        border-radius: 20px;
     }
     .detail .head{
         display: flex;
         flex-wrap: nowrap;
+        box-sizing: border-box;
+        padding: 0 20px;
     }
     .detail .head img {
-        width: 50%;
+        /* width: 50%; */
         margin: auto;
     }
     .detail .head table {
-        width: auto;
+        /* width: auto; */
         margin: auto;
         margin-left: 30px;
     }
@@ -72,15 +85,21 @@
     }
 }
 @media screen and (min-width: 1020px){
+    .hero-header {
+        background:linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url("/images/heros/hero-image_2-large.jpg");
+        background-size: cover;
+        background-position: center;
+    }
     #resto-list .card {
         width: 380px;
     }
-    .detail .head img {
-        width: 530px;
+    .detail .head {
+        box-sizing: border-box;
+        padding: 0 100px;
     }
     .detail .head table {
-        margin-left: 50px;
-        max-width: 80%;
+        /* margin-left: 50px; */
+        width: 80%;
     }
     .form {
         padding: 0 8%;

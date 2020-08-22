@@ -1,4 +1,4 @@
-import MakanBangDB from '../../data/favoriteResto';
+import MakanBangDB from '../../data/favoriteRestoIdb';
 import { restoListTemplate, dataErrorTemplate } from '../templates/template-creator';
 import Preloader from '../../loader/loading';
 import ElementViews from '../../utils/element-view';

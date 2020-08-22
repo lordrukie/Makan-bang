@@ -7,6 +7,8 @@ import './component/footer-view';
 import './component/nav-view';
 import './component/skip-content';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const docContent = document.querySelector('.content');
 const app = new App({

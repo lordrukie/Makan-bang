@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const restoListTemplate = (list) => `
 <div class="card">
 <div class="card-main">
-    <img src="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_SML}/${list.pictureId}" alt="Restoran ${list.name}">
+    <img src="/images/icons/asset_dummy1.png" class="lazyload" data-src="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_SML}/${list.pictureId}" alt="Restoran ${list.name}">
 </div>
 <div class="card-desc">
     <div class="card-header">
@@ -26,7 +26,7 @@ const detailRestoCategoryTemplate = (category) => `
 const userRateTemplate = (rate) => `
 <div class="card">
             <div class="card-main">
-                <img src="${rate.profilePic}" alt="Wajah Dari ${rate.name}">
+                <img src="/images/icons/asset_dummy2.png" class="lazyload" data-src="${rate.profilePic}" alt="Wajah Dari ${rate.name}">
             </div>
             <div class="card-desc">
                 <div class="card-header">
@@ -41,7 +41,7 @@ const userRateTemplate = (rate) => `
 const userReviewTemplate = (user) => `
 <div class="card">
             <div class="card-main">
-                <img src="./images/users/anonym.png" alt="anonym">
+                <img src="/images/icons/asset_dummy1.png" class="lazyload" data-src="./images/users/anonym.jpg" alt="anonym">
             </div>
             <div class="card-desc">
                 <div class="card-header">
@@ -56,7 +56,13 @@ const restoDetailTemplate = (resto) => `
 <div class="detail">
 <h1>Detail Restoran</h1>
 <div class="head">
-    <img src="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_MED}/${resto.pictureId}" alt="Restoran ${resto.name}">
+    <div class="head-img">
+    <img src="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_MED}/${resto.pictureId}"
+    srcset="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_SML}/${resto.pictureId} 550w, ${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_MED}/${resto.pictureId} 800w"
+    sizes="(max-width: 600px) 600px, 800px" 
+    alt="Restoran ${resto.name}">
+    </img>
+    </div>
     <table>
         <tr>
             <td><i class="fas fa-store"></i></td>
@@ -85,14 +91,14 @@ const createMenuListTemplate = (menu) => `
 <p>${menu.name}</p>
 `;
 
-const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+const createSaveButtonTemplate = () => `
+  <button aria-label="save this resto" id="likeButton" class="like">
      <i class="fa fa-save" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+const createDeleteButtonTemplate = () => `
+  <button aria-label="delete this resto" id="likeButton" class="like">
     <i class="fa fa-trash" aria-hidden="true"></i>
   </button>
 `;
@@ -106,8 +112,8 @@ export {
   restoDetailTemplate,
   userRateTemplate,
   userReviewTemplate,
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createSaveButtonTemplate,
+  createDeleteButtonTemplate,
   detailRestoCategoryTemplate,
   dataErrorTemplate,
   createMenuListTemplate,
