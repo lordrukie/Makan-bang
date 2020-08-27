@@ -289,13 +289,6 @@
      flex-direction: column;
      align-items: center;
 }
-.detail .head-img {
-    min-width: 220px;
-    min-height: 150px;
-    margin: 0 auto;
-    display: flex;
-    border-radius: 20px;
-}
  .detail .head img {
      width: 100%;
      margin: 0 auto;

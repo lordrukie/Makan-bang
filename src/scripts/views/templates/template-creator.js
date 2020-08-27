@@ -56,13 +56,12 @@ const restoDetailTemplate = (resto) => `
 <div class="detail">
 <h1>Detail Restoran</h1>
 <div class="head">
-    <div class="head-img">
+
     <img src="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_MED}/${resto.pictureId}"
     srcset="${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_SML}/${resto.pictureId} 550w, ${CONFIG.BASE_URL}${CONFIG.IMAGE_URL_MED}/${resto.pictureId} 800w"
     sizes="(max-width: 600px) 600px, 800px" 
     alt="Restoran ${resto.name}">
-    </img>
-    </div>
+
     <table>
         <tr>
             <td><i class="fas fa-store"></i></td>
